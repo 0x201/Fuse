@@ -1,5 +1,5 @@
 ﻿var app = ConsoleApp.Create();
 
-app.Add<SHA256Command>("sha256");
+app.Add<CryptoCommand>();
 
 app.Run(args);

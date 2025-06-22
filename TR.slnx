@@ -1,3 +1,6 @@
 <Solution>
   <Project Path="TR/TR.csproj" />
+  <Folder Name="/src/">
+    <Project Path="src/TR.csproj" />
+  </Folder>
 </Solution>
