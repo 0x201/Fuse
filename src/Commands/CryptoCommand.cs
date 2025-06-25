@@ -2,11 +2,10 @@
 
 public class CryptoCommand
 {
-
     /// <summary>
     /// Generate hash of a file
     /// </summary>
-    /// <param name="filePath">-f, File path to calculate hash</param>
+    /// <param name="filePath">-p, File path to calculate hash</param>
     /// <param name="algorithm">-a, Hash algorithm (md5, sha1, sha256, sha384, sha512(default))</param>
     /// <param name="base64">-b, Output in base64 format</param>
     /// <exception cref="ArgumentException"></exception>
@@ -24,10 +23,10 @@ public class CryptoCommand
     /// <summary>
     /// Verify a file
     /// </summary>
-    /// <param name="filePath">f, File path to verify</param>
-    /// <param name="expectedHash">h, Expected hash value</param>
-    /// <param name="algorithm">a, Hash algorithm (md5, sha1, sha256, sha384, sha512(default))</param>
-    /// <param name="isBase64">"b", "Hash is in base64 format"</param>
+    /// <param name="filePath">-p, File path to verify</param>
+    /// <param name="expectedHash">-e, Expected hash value</param>
+    /// <param name="algorithm">-a, Hash algorithm (md5, sha1, sha256, sha384, sha512(default))</param>
+    /// <param name="isBase64">-b, "Hash is in base64 format"</param>
     /// <exception cref="ArgumentException"></exception>
     [Command("verify")]
     public void Verify(string filePath, string expectedHash, string algorithm = "sha256", bool isBase64 = false)
