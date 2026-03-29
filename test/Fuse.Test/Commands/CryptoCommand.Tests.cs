@@ -35,7 +35,7 @@ public class CryptoCommandTests
         File.WriteAllText(filePath, "Test content");
 
         byte[] hashBytes = CalculateSHA256Hash(File.ReadAllBytes(filePath));
-        string expectedHash = BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
+        string expectedHash = Convert.ToHexStringLower(hashBytes);
 
         // Act & Assert
         _cryptoCommand.Verify(filePath, expectedHash);
@@ -74,7 +74,7 @@ public class CryptoCommandTests
         string filePath = Path.Combine(Path.GetTempPath(), GenerateRandomFileName());
         File.WriteAllText(filePath, "Test content");
 
-        string[] algorithms = new string[] { "md5", "sha1", "sha256", "sha384", "sha512" };
+        string[] algorithms = ["md5", "sha1", "sha256", "sha384", "sha512"];
 
         foreach (var algorithm in algorithms)
         {
@@ -103,7 +103,7 @@ public class CryptoCommandTests
         Assert.Contains("Unsupported algorithm: unsupported", ex.Message);
     }
 
-    private byte[] CalculateSHA256Hash(byte[] data)
+    private static byte[] CalculateSHA256Hash(byte[] data)
     {
         return SHA256.HashData(data);
     }
