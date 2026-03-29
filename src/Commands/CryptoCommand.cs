@@ -1,4 +1,4 @@
-﻿namespace TR.Commands;
+﻿namespace Fuse.Commands;
 
 public class CryptoCommand
 {
@@ -46,7 +46,7 @@ public class CryptoCommand
         Console.WriteLine($"Result:   {(isValid ? "VALID" : "INVALID")}");
     }
 
-    private byte[] CalculateHash(string filePath, string algorithm)
+    private static byte[] CalculateHash(string filePath, string algorithm)
     {
         if (!File.Exists(filePath))
         {
@@ -67,7 +67,7 @@ public class CryptoCommand
         return hashBytes;
     }
 
-    private string FormatHash(byte[] hashBytes, bool base64 = false)
+    private static string FormatHash(byte[] hashBytes, bool base64 = false)
     {
         string hash = base64
            ? Convert.ToBase64String(hashBytes)

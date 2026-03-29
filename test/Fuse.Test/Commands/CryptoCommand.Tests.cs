@@ -1,7 +1,7 @@
-using TR.Commands;
+using Fuse.Commands;
 using System.Security.Cryptography;
 
-namespace TR.Test.Commands;
+namespace Fuse.Test.Commands;
 
 [TestClass]
 public class CryptoCommandTests
