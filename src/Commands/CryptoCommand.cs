@@ -6,7 +6,7 @@ public class CryptoCommand
     /// Generate hash of a file
     /// </summary>
     /// <param name="filePath">-p, File path to calculate hash</param>
-    /// <param name="algorithm">-a, Hash algorithm (md5, sha1, sha256, sha384, sha512(default))</param>
+    /// <param name="algorithm">-a, Hash algorithm (md5, sha1, sha256(default), sha384, sha512)</param>
     /// <param name="base64">-b, Output in base64 format</param>
     /// <exception cref="ArgumentException"></exception>
     [Command("hash")]
@@ -25,7 +25,7 @@ public class CryptoCommand
     /// </summary>
     /// <param name="filePath">-p, File path to verify</param>
     /// <param name="expectedHash">-e, Expected hash value</param>
-    /// <param name="algorithm">-a, Hash algorithm (md5, sha1, sha256, sha384, sha512(default))</param>
+    /// <param name="algorithm">-a, Hash algorithm (md5, sha1, sha256(default), sha384, sha512)</param>
     /// <param name="isBase64">-b, "Hash is in base64 format"</param>
     /// <exception cref="ArgumentException"></exception>
     [Command("verify")]
