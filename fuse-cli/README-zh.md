@@ -22,7 +22,7 @@ Fuse 是一个基于 .NET 的小工具集合，主要用于文件哈希计算和
 ### 克隆项目
 
 ```bash
-git clone https://github.com/your-repo/fuse.git
+git clone https://github.com/trickyrat/fuse.git
 cd fuse
 ```
 

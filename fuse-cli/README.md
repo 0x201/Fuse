@@ -22,7 +22,7 @@ Fuse is a collection of small utilities built on .NET, primarily designed for fi
 ### Clone the Project
 
 ```bash
-git clone https://github.com/your-repo/fuse.git
+git clone https://github.com/trickyrat/fuse.git
 cd fuse
 ```
 
