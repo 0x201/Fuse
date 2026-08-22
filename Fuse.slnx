@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/test/">
+    <Project Path="test/Fuse.Test/Fuse.Test.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Fuse.Benchmarks/Fuse.Benchmarks.csproj" />
+    <Project Path="src/Fuse.CLI/Fuse.csproj" />
+  </Folder>
+</Solution>

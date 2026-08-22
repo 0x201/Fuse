@@ -1,8 +1,0 @@
-<Solution>
-  <Folder Name="/test/">
-    <Project Path="test/Fuse.Test/Fuse.Test.csproj" />
-  </Folder>
-  <Folder Name="/src/">
-    <Project Path="src/Fuse.csproj" />
-  </Folder>
-</Solution>
