@@ -6,7 +6,7 @@ public class CryptoCommand
     /// Generate hash of a file
     /// </summary>
     /// <param name="filePath">-p, File path to calculate hash</param>
-    /// <param name="algorithm">-a, Hash algorithm (md5, sha1, sha256(default), sha384, sha512)</param>
+    /// <param name="algorithm">-a, Hash algorithm (md5, sha1, sha256(default), sha512)</param>
     /// <param name="base64">-b, Output in base64 format</param>
     /// <exception cref="ArgumentException"></exception>
     [Command("hash")]
@@ -99,7 +99,6 @@ public class CryptoCommand
             "md5" => MD5.HashData(stream),
             "sha1" => SHA1.HashData(stream),
             "sha256" => SHA256.HashData(stream),
-            "sha384" => SHA384.HashData(stream),
             "sha512" => SHA512.HashData(stream),
             _ => throw new ArgumentException($"Unsupported algorithm: {algorithm}")
         };
