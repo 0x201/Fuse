@@ -15,10 +15,11 @@ public class CryptoCommand
         try
         {
             var hashBytes = CalculateHash(filePath, algorithm);
+            var fileName = GetDisplayName(filePath);
 
             var hash = FormatHash(hashBytes, base64);
 
-            Console.WriteLine($"{filePath}-{algorithm.ToUpper()}:{hash}");
+            Console.WriteLine($"[{fileName}] -> {algorithm.ToUpper()}:{hash}");
             return 0;
         }
         catch (Exception ex) when (ex is FileNotFoundException
@@ -53,6 +54,7 @@ public class CryptoCommand
         try
         {
             byte[] hashBytes = CalculateHash(filePath, algorithm);
+            var fileName = GetDisplayName(filePath);
             string actualHash = FormatHash(hashBytes, isBase64);
 
             byte[] expectedHashBytes = isBase64
@@ -61,7 +63,7 @@ public class CryptoCommand
 
             bool isValid = CryptographicOperations.FixedTimeEquals(hashBytes, expectedHashBytes);
 
-            Console.WriteLine($"Verifying {filePath} with {algorithm.ToUpper()}:");
+            Console.WriteLine($"Verifying {fileName} with {algorithm.ToUpper()}:");
             Console.WriteLine($"Expected: {expectedHash}");
             Console.WriteLine($"Actual:   {actualHash}");
             Console.WriteLine($"Result:   {(isValid ? "VALID" : "INVALID")}");
@@ -104,6 +106,18 @@ public class CryptoCommand
         };
 
         return hashBytes;
+    }
+
+    private static string GetDisplayName(string filePath)
+    {
+        if (string.IsNullOrEmpty(filePath))
+        {
+            return filePath ?? string.Empty;
+        }
+
+        var trimmed = filePath.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+        var name = Path.GetFileName(trimmed);
+        return string.IsNullOrEmpty(name) ? filePath : name;
     }
 
     private static string FormatHash(byte[] hashBytes, bool base64 = false)
